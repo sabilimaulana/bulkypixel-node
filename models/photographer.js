@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       avatar_url: DataTypes.STRING,
       avatar_public_id: DataTypes.STRING,
       instagram: DataTypes.STRING,
+      slug: DataTypes.STRING,
       status: DataTypes.BOOLEAN,
     },
     {

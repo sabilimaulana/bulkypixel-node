@@ -18,11 +18,11 @@ module.exports = {
         },
         url: {
           type: Sequelize.STRING,
-          unique: "actions_unique",
+          unique: "url",
         },
         public_id: {
           type: Sequelize.STRING,
-          unique: "actions_unique",
+          unique: "public_id_unique",
         },
         photographer_id: {
           type: Sequelize.INTEGER,
@@ -52,8 +52,11 @@ module.exports = {
       },
       {
         uniqueKeys: {
-          actions_unique: {
-            fields: ["public_id", "url"],
+          public_id_unique: {
+            fields: ["public_id"],
+          },
+          url_unique: {
+            fields: ["url"],
           },
         },
       }
