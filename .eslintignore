@@ -1,0 +1,8 @@
+// eslint akan mengabaikan code formatting
+// untuk folder dibawah ini
+
+node_modules
+
+dist
+
+coverage
