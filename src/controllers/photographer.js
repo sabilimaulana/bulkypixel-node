@@ -28,7 +28,9 @@ exports.addPhotographer = async (req, res) => {
     let avatar_public_id;
 
     if (req.file) {
-      const cloudinaryRes = await cloudinary.uploader.upload(req.file.path);
+      const cloudinaryRes = await cloudinary.uploader.upload(req.file.path, {
+        folder: "bulkypixel",
+      });
       avatar_url = cloudinaryRes.secure_url;
       avatar_public_id = cloudinaryRes.public_id;
     }
@@ -145,7 +147,9 @@ exports.editPhotographer = async (req, res) => {
         await cloudinary.uploader.destroy(photographer.avatar_public_id);
       }
 
-      const cloudinaryRes = await cloudinary.uploader.upload(req.file.path);
+      const cloudinaryRes = await cloudinary.uploader.upload(req.file.path, {
+        folder: "bulkypixel",
+      });
       avatar_url = cloudinaryRes.secure_url;
       avatar_public_id = cloudinaryRes.public_id;
     }

@@ -6,8 +6,10 @@ var app = express();
 app.use(cors());
 
 const urlV1 = "/api/v1";
+const imageRoute = require("./src/routes/image");
 const photographerRoute = require("./src/routes/photographer");
 
+app.use(`${urlV1}/images`, imageRoute);
 app.use(`${urlV1}/photographers`, photographerRoute);
 
 app.use(express.json());
